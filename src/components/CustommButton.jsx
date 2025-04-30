@@ -28,9 +28,6 @@ export const CustomButton = forwardRef(({ color = 'primary', onClick, children, 
         `
     };
 
-    // const primaryClasses = `bg-[#0DC0DE] text-black hover:bg-[#0BABB8] shadow-[0_4px_10px_rgba(13,192,222,0.25)] disabled:bg-[#A0E0E8] disabled:text-gray-500 disabled:transform-none disabled:shadow-none`;
-    // const secondaryClasses = `bg-[var(--secondary)] text-[var(--secondary-text)] hover:bg-gray-50 shadow-[0_4px_10px_rgba(0,0,0,0.05)] disabled:bg-[var(--secondary-disabled)] disabled:text-gray-400 disabled:transform-none disabled:shadow-none`;
-    // // const finalColorStyles = color === 'primary' ? primaryClasses : secondaryClasses;
     return (
         <Button
         variant="contained"
