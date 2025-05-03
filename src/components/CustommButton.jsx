@@ -65,3 +65,5 @@ CustomButton.propTypes = {
 };
 
 CustomButton.displayName = 'CustomButton';
+export default CustomButton;
+
