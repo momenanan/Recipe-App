@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SelectCountry from './Pages/SelectCountry';
 import Logo from './components/Logo';
 import HeroImage from './components/HeroImage';
 import Title from './components/Title';

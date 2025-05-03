@@ -9,7 +9,7 @@ const CountryRadioList = () => {
   const [selectedCountry, setSelectedCountry] = useState('');
 
   return (
-    <div className="max-w-xs mx-auto bg-[#f4f0eb] p-4 rounded shadow">
+    <div className=" bg-[#f4f0eb] p-4 rounded shadow">
       <form className="space-y-1">
         {countries.map((country) => (
           <label
@@ -39,3 +39,4 @@ const CountryRadioList = () => {
 };
 
 export default CountryRadioList;
+
