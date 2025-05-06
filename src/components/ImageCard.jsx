@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Card } from '@mui/material';
 import clsx from 'clsx';
 
 const ImageCard = ({ label, image, selected, onClick }) => {
@@ -13,7 +12,6 @@ const ImageCard = ({ label, image, selected, onClick }) => {
       style={{
         backgroundColor: '#fde2c7',
         borderRadius: '1rem',
-        clipPath: `path('M0,0 H100% Vcalc(100% - 16px) Q50% 100% 0 calc(100% - 16px) Z')`, // هذا تقريب عام
       }}
     >
       <div className={clsx(
@@ -27,7 +25,7 @@ const ImageCard = ({ label, image, selected, onClick }) => {
 
       <div
         className={clsx(
-          'w-5 h-5 rounded-full absolute bottom-[-12px] transition border-2 border-white',
+          'w-5 h-5 rounded-full absolute -bottom-3 transition border-2 border-white',
           selected ? 'bg-cyan-400' : 'bg-gray-300'
         )}
       />
@@ -35,29 +33,45 @@ const ImageCard = ({ label, image, selected, onClick }) => {
   );
 };
 
-const ImageCardSelector = () => {
-  const [selectedLabel, setSelectedLabel] = useState('');
+const ImageCardSelector = ({ onSelectionChange }) => {
+  const [selectedLabels, setSelectedLabels] = useState([]);
 
   const items = [
     { label: 'Indian', image: '/indian.jpg' },
     { label: 'Italian', image: '/itilian.jpg' },
-    { label: 'Chinese', image: '/chinese.jpg'},
-    {label:'Japanese', image:'/japanese.jpg'},
-    {label:'Thai', image:'/thai.jpg'},
-    {label:'Mexican', image:'/Mexican.jpg'},
+    { label: 'Chinese', image: '/chinese.jpg' },
+    { label: 'Japanese', image: '/japanese.jpg' },
+    { label: 'Thai', image: '/thai.jpg' },
+    { label: 'Mexican', image: '/Mexican.jpg' },
   ];
 
+  const handleClick = (label) => {
+    let updated = [];
+
+    if (selectedLabels.includes(label)) {
+      updated = selectedLabels.filter((item) => item !== label);
+    } else {
+      if (selectedLabels.length >= 3) return; 
+      updated = [...selectedLabels, label];
+    }
+
+    setSelectedLabels(updated);
+    onSelectionChange && onSelectionChange(updated);
+  };
+
   return (
-    <div className="flex gap-6 justify-center mt-10">
-      {items.map((item) => (
-        <ImageCard
-          key={item.label}
-          label={item.label}
-          image={item.image}
-          selected={selectedLabel === item.label}
-          onClick={() => setSelectedLabel(item.label)}
-        />
-      ))}
+    <div className="flex justify-center mt-10">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-10">
+        {items.map((item) => (
+          <ImageCard
+            key={item.label}
+            label={item.label}
+            image={item.image}
+            selected={selectedLabels.includes(item.label)}
+            onClick={() => handleClick(item.label)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

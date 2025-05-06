@@ -23,7 +23,7 @@ export default function CountrySelection() {
         </div>
 
         <div className="flex justify-center">
-          <CustommButton />
+          <CustommButton>Continue</CustommButton>
         </div>
       </div>
     </div>
