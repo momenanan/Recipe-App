@@ -3,10 +3,11 @@ import { Typography, Chip } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import GroupIcon from '@mui/icons-material/Group';
 import PersonIcon from '@mui/icons-material/Person';
+import { Link } from 'react-router-dom';
 
 const categories = ['Healthy', 'Quick', 'Cuisine', 'Breakfast', 'Snack', 'Dinner'];
 
-const cards = [
+export const cards = [
   {
     title: 'Salad 2.0',
     image: '/public/categories1.jpg',
@@ -57,11 +58,13 @@ const CategoriesSection = () => {
         ))}
       </div>
 
+      {/* Cards */}
       <div className="flex gap-5 overflow-x-auto">
         {cards.map((item, i) => (
-          <div
+          <Link
+            to={`/recipe/${encodeURIComponent(item.title)}`}
             key={i}
-            className="rounded-[2rem] bg-gradient-to-b from-[#fcd5cf] to-[#f9c1b1] overflow-hidden shadow-md min-w-[180px] w-[200px]"
+            className="rounded-[2rem] bg-gradient-to-b from-[#fcd5cf] to-[#f9c1b1] overflow-hidden shadow-md min-w-[180px] w-[200px] no-underline"
           >
             <div className="w-full h-[130px] overflow-hidden">
               <img
@@ -90,7 +93,7 @@ const CategoriesSection = () => {
               <span className={`w-3 h-3 rounded-full ${item.color}`}></span>
               <p className="text-sm font-semibold">{item.title}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,14 +1,17 @@
 import React from 'react';
 import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
-const trendingItems = [
+export const trendingItems = [
   {
     title: 'Italian Pizza',
-    image: '/public/italian-pizza.jpg', 
+    image: '/public/italian-pizza.jpg',
+    color: 'green',
   },
   {
     title: 'Indian Tawa',
     image: '/public/indian-tawa.jpg',
+    color: 'green',
   },
 ];
 
@@ -26,7 +29,8 @@ const TrendingToday = () => {
       {/* Cards */}
       <div className="flex gap-4 overflow-x-auto">
         {trendingItems.map((item) => (
-          <div
+          <Link
+            to={`/recipe/${encodeURIComponent(item.title)}`}
             key={item.title}
             className="rounded-xl overflow-hidden shadow-md min-w-[160px] bg-white"
           >
@@ -36,10 +40,10 @@ const TrendingToday = () => {
               className="w-full h-28 object-cover"
             />
             <div className="bg-[#0A3C4C] text-white flex items-center gap-2 px-2 py-1">
-              <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              <span className={`w-2 h-2 rounded-full bg-${item.color}-500`}></span>
               <p className="text-sm font-semibold">{item.title}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -2,17 +2,17 @@ import React from 'react';
 import { InputBase } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
-const SearchInput = () => {
+const SearchInput = ({ placeholderText = "Search..." }) => {
   return (
-    <div className="flex items-center w-96 rounded-xl shadow-sm bg-white px-4 py-2">
+    <div className="flex items-center w-full sm:w-96 rounded-xl shadow-sm bg-white px-4 py-2">
       <InputBase
-        placeholder="Enter your country’s name"
+        placeholder={placeholderText}
         fullWidth
-        inputProps={{ 'aria-label': 'search countries' }}
+        inputProps={{ 'aria-label': 'search input' }}
         className="text-gray-500"
       />
-<Search className="text-pink-500" fontSize="large" />
-</div>
+      <Search className="text-pink-500" fontSize="large" />
+    </div>
   );
 };
 

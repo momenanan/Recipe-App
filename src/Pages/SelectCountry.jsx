@@ -15,7 +15,7 @@ export default function CountrySelection() {
         </h2>
 
         <div className="mb-4">
-          <SearchInput />
+        <SearchInput placeholderText="Enter your country’s name" />
         </div>
 
         <div className="mb-4">
