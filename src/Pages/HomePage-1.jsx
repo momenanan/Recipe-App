@@ -1,10 +1,10 @@
 import React from 'react';
-import Logo from './components/Logo';
-import SearchInput from './components/SearchInput';
-import TrendingToday from './components/TrendingToday';
-import CategoriesSection from './components/categories';
-import VerifiedChefs from './components/VerifiedChefs';
-import FooterNav from './components/FooterNav';
+import Logo from '../components/Logo';
+import SearchInput from '../components/SearchInput';
+import TrendingToday from '../components/TrendingToday';
+import CategoriesSection from '../components/categories';
+import VerifiedChefs from '../components/VerifiedChefs';
+import FooterNav from '../components/FooterNav';
 
 export default function HomePage() {
   return (
@@ -18,7 +18,7 @@ export default function HomePage() {
           <Logo />
         </div>
 
-        <SearchInput />
+        <SearchInput placeholderText="What’s cooking in your mind…?" />
 
         <TrendingToday />
 
