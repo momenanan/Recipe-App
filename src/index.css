@@ -1,2 +1,17 @@
 @import "tailwindcss" important;
+@layer base{
+    :root {
+        --primary: rgba(13, 192, 222, 1);
+        --primary-disabled: rgba(13, 192, 222, 0.5);
+        --primary-darker: rgb(10, 118, 136);
+        --secondary: rgba(233, 69, 93, 1);
+        --secondary-darker: rgb(163, 58, 73);
+        --secondary-disabled: rgba(233, 69, 93, 0.5);
 
+
+
+        --primary-text: rgba(33, 82, 115, 1);
+        --secondary-text: rgba(255, 255, 255, 1);
+
+    }
+}

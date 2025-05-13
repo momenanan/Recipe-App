@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import RecipeHeader from '../components/RecipeHeader';
 import RecipeImage from '../components/RecipeImage';
-import { trendingItems } from '../components/TrendingToday';
-import { cards } from '../components/categories';
+import { trendingItems } from './TrendingToday.jsx';
+import { cards } from './categories.jsx';
 import { ingredientsData, instructionsData } from '../data/recipedata';
 
 const allRecipes = [...trendingItems, ...cards];

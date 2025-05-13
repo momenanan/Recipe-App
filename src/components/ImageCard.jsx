@@ -33,46 +33,42 @@ const ImageCard = ({ label, image, selected, onClick }) => {
   );
 };
 
-const ImageCardSelector = ({ onSelectionChange }) => {
-  const [selectedLabels, setSelectedLabels] = useState([]);
 
-  const items = [
-    { label: 'Indian', image: '/indian.jpg' },
-    { label: 'Italian', image: '/itilian.jpg' },
-    { label: 'Chinese', image: '/chinese.jpg' },
-    { label: 'Japanese', image: '/japanese.jpg' },
-    { label: 'Thai', image: '/thai.jpg' },
-    { label: 'Mexican', image: '/Mexican.jpg' },
-  ];
+const items = [
+  { label: 'Indian', image: '/indian.jpg' },
+  { label: 'Italian', image: '/italian.jpg' },
+  { label: 'Chinese', image: '/chinese.jpg' },
+  { label: 'Japanese', image: '/japanese.jpg' },
+  { label: 'Thai', image: '/thai.jpg' },
+  { label: 'Mexican', image: '/mexican.jpg' },
+];
 
+const ImageCardSelector = ({ selected = [], onSelectionChange }) => {
   const handleClick = (label) => {
-    let updated = [];
-
-    if (selectedLabels.includes(label)) {
-      updated = selectedLabels.filter((item) => item !== label);
+    let updated;
+    if (selected.includes(label)) {
+      updated = selected.filter((item) => item !== label);
     } else {
-      if (selectedLabels.length >= 3) return; 
-      updated = [...selectedLabels, label];
+      if (selected.length >= 3) return;
+      updated = [...selected, label];
     }
-
-    setSelectedLabels(updated);
-    onSelectionChange && onSelectionChange(updated);
+    onSelectionChange(updated);
   };
 
   return (
-    <div className="flex justify-center mt-10">
-      <div className="grid grid-cols-2 gap-x-6 gap-y-10">
-        {items.map((item) => (
-          <ImageCard
-            key={item.label}
-            label={item.label}
-            image={item.image}
-            selected={selectedLabels.includes(item.label)}
-            onClick={() => handleClick(item.label)}
-          />
-        ))}
+      <div className="flex justify-center mt-10">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10">
+          {items.map((item) => (
+              <ImageCard
+                  key={item.label}
+                  label={item.label}
+                  image={item.image}
+                  selected={selected.includes(item.label)}
+                  onClick={() => handleClick(item.label)}
+              />
+          ))}
+        </div>
       </div>
-    </div>
   );
 };
 

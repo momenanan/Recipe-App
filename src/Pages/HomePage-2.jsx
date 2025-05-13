@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
-import RecipeHeader from './components/RecipeHeader';
-import RecipeImage from './components/RecipeImage';
-import RecipeDetails from './components/RecipeDetail';
-import { trendingItems } from './components/TrendingToday';
-import { cards } from './components/categories';
-import { ingredientsData, instructionsData } from './data/recipeData';
+import RecipeHeader from '../components/RecipeHeader';
+import RecipeImage from '../components/RecipeImage';
+import RecipeDetails from '../components/RecipeDetail';
+import { trendingItems } from '../components/TrendingToday';
+import { cards } from '../components/categories';
+import { ingredientsData, instructionsData } from '../data/recipeData';
 
 export default function RecipePage() {
   const { title } = useParams();

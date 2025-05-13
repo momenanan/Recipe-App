@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import SelectCountry from './Pages/SelectCountry';
-import Logo from './components/Logo';
-import HeroImage from './components/HeroImage';
-import Title from './components/Title';
-import Stepper from './components/Stepper';
-import {CustomButton} from './components/CustommButton';
-import { Radio } from '@mui/material';
-import RadioBox from './components/RadioBox';
+import Logo from '../components/Logo.jsx';
+import HeroImage from '../components/HeroImage.jsx';
+import Title from '../components/Title.jsx';
+import Stepper from '../components/Stepper.jsx';
+import {CustomButton} from '../components/CustommButton.jsx';
+import {useNavigate, useNavigation} from "react-router-dom";
 const images = [
   './3.jpg',
   './1.jpg',
@@ -15,14 +13,15 @@ const images = [
 
 const totalSteps = images.length;
 
-export default function App() {
+export default function Onboardingpage() {
   const [currentStep, setCurrentStep] = useState(0);
-
+  const navigate = useNavigate();
   const handleNextStep = () => {
     if (currentStep < totalSteps - 1) {
       setCurrentStep(prevStep => prevStep + 1);
     } else {
       console.log("Start Cooking!");
+      navigate("/login");
     }
   };
 

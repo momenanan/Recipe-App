@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 export const CustomButton =forwardRef(({ color = 'primary', onClick, children, className = '', logo, logoDescription= "", ...rest }, ref) => {
 
     const colorClass = {
-            primary: `${ref.current?.disabled?'bg-[var(--primary-disabled)]':'bg-[var(--primary)]'} text-[var(--primary-text)]  hover:bg-[var(--primary-darker)] shadow-[0_4px_10px_rgba(20,168,100,0.2)]`,
-            secondary: `${ref.current?.disabled?'bg-[var(--secondary-disabled)]':'bg-[var(--secondary)]'} text-[var(--secondary-text)] hover:bg-gray-50 shadow-[0_4px_10px_rgba(0,0,0,0.05)]`
+            primary: `${ref?.current?.disabled?'bg-[var(--primary-disabled)]':'bg-[var(--primary)]'} text-[var(--primary-text)]  hover:bg-[var(--primary-darker)] shadow-[0_4px_10px_rgba(20,168,100,0.2)]`,
+            secondary: `${ref?.current?.disabled?'bg-[var(--secondary-disabled)]':'bg-[var(--secondary)]'} text-[var(--secondary-text)]  shadow-[0_4px_10px_rgba(0,0,0,0.05)]`
     }
 
     return (
