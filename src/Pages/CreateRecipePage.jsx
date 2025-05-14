@@ -3,10 +3,10 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import GroupIcon from '@mui/icons-material/Groups';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
-import AddImage from './components/AddImage';
-import { FormInput } from './components/FormInput';
-import CounterControl from './components/CounterControl';
-import FooterNav from './components/FooterNav';
+import AddImage from '../components/AddImage';
+import { FormInput } from '../components/FormInput';
+import CounterControl from '../components/CounterControl';
+import FooterNav from '../components/FooterNav';
 
 const CreateRecipePage = () => {
   return (

@@ -4,7 +4,7 @@ import HeroImage from '../components/HeroImage.jsx';
 import Title from '../components/Title.jsx';
 import Stepper from '../components/Stepper.jsx';
 import {CustomButton} from '../components/CustommButton.jsx';
-import {useNavigate, useNavigation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 const images = [
   './3.jpg',
   './1.jpg',

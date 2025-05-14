@@ -7,6 +7,8 @@ import CountrySelection from "./Pages/SelectCountry.jsx";
 import KitchenSetupPage from "./Pages/ImageCardPage.jsx";
 import Part5 from "./components/SelectingPreference/Part5.jsx";
 import Profile from "./components/Profile/Profile.jsx";
+import CreateRecipePage from './Pages/CreateRecipePage';
+import SettingsPage from './Pages/SettingsPage.jsx';
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         <Route path="/recipe/:title" element={<RecipeDetail />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/homepage" element={<HomePage />} />
+        <Route path="/create" element={<CreateRecipePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+
       </Routes>
     </Router>
   );
